@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rebecca Opiyo | Cybersecurity Portfolio</title>
+
+    <meta name="description" content="Cybersecurity and computer science portfolio featuring security research, Python projects, REST API documentation, vulnerability assessment, and secure systems.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08111f;
+            color: #e6edf7;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 17, 31, 0.96);
+            border-bottom: 1px solid #1d3047;
+        }
+
+        .nav-inner {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            color: #b8c7d9;
+        }
+
+        .nav-links a:hover {
+            color: #58a6ff;
+        }
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 30%, rgba(31, 111, 235, 0.16), transparent 35%),
+                radial-gradient(circle at 20% 70%, rgba(88, 166, 255, 0.08), transparent 35%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #1f6feb;
+            border-radius: 20px;
+            color: #58a6ff;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            color: #58a6ff;
+        }
+
+        .hero p {
+            color: #9fb0c5;
+            font-size: 19px;
+            max-width: 700px;
+            margin-bottom: 32px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 21px;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid #1f6feb;
+            transition: 0.2s;
+        }
+
+        .primary {
+            background: #1f6feb;
+            color: white;
+        }
+
+        .secondary {
+            color: #58a6ff;
+            background: transparent;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #8494a8;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+        }
+
+        .about-text p {
+            color: #aab8c9;
+            margin-bottom: 18px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-content: flex-start;
+        }
+
+        .skill {
+            border: 1px solid #263b54;
+            background: #0d1929;
+            padding: 10px 14px;
+            border-radius: 6px;
+            color: #b9c8d9;
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project {
+            background: #0d1929;
+            border: 1px solid #20344c;
+            border-radius: 10px;
+            padding: 28px;
+            transition: 0.2s;
+        }
+
+        .project:hover {
+            border-color: #1f6feb;
+            transform: translateY(-3px);
+        }
+
+        .project-number {
+            color: #58a6ff;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #91a2b7;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .project-tech span {
+            font-size: 12px;
+            color: #8fb9e8;
+            background: #10243c;
+            padding: 5px 9px;
+            border-radius: 4px;
+        }
+
+        .project-link {
+            color: #58a6ff;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .focus-card {
+            background: #0d1929;
+            border: 1px solid #20344c;
+            padding: 25px;
+            border-radius: 9px;
+        }
+
+        .focus-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .focus-card p {
+            color: #91a2b7;
+            font-size: 14px;
+        }
+
+        .contact {
+            text-align: center;
+            background: #0a1524;
+            border-top: 1px solid #172a40;
+            border-bottom: 1px solid #172a40;
+        }
+
+        .contact p {
+            color: #91a2b7;
+            max-width: 650px;
+            margin: 0 auto 28px;
+        }
+
+        footer {
+            padding: 30px 0;
+            color: #718198;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .projects,
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 570px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">RO / SECURITY</div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="tag">CYBERSECURITY & COMPUTER SCIENCE</div>
+
+            <h1>
+                Building secure,<br>
+                <span>documented systems.</span>
+            </h1>
+
+            <p>
+                A technical portfolio focused on cybersecurity, Python,
+                REST API security, technical documentation, vulnerability
+                assessment, and secure systems.
+            </p>
+
+            <div class="buttons">
+                <a class="button primary" href="#projects">
+                    View Projects
+                </a>
+
+                <a class="button secondary"
+                   href="https://github.com/Rebeccapiyowino-prog"
+                   target="_blank">
+                    GitHub Profile
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About</h2>
+            <p>Security focused technical work and documentation.</p>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+                <p>
+                    I am focused on cybersecurity and computer science,
+                    with an interest in security research, secure systems,
+                    Python based security tools, API security, and
+                    technical documentation.
+                </p>
+
+                <p>
+                    My projects demonstrate practical work across security
+                    analysis, file integrity monitoring, vulnerability
+                    assessment, REST API documentation, authentication,
+                    authorization, validation, and secure API design.
+                </p>
+
+                <p>
+                    I also focus on presenting technical information clearly
+                    so that security controls, system behavior, and
+                    implementation requirements are easy to understand.
+                </p>
+            </div>
+
+            <div class="skills" id="skills">
+                <div class="skill">Cybersecurity</div>
+                <div class="skill">Python</div>
+                <div class="skill">REST APIs</div>
+                <div class="skill">API Security</div>
+                <div class="skill">Authentication</div>
+                <div class="skill">Authorization</div>
+                <div class="skill">Technical Documentation</div>
+                <div class="skill">Vulnerability Assessment</div>
+                <div class="skill">Security Analysis</div>
+                <div class="skill">File Integrity</div>
+                <div class="skill">OpenAPI</div>
+                <div class="skill">Secure Systems</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+            <p>Selected security and technical documentation projects.</p>
+        </div>
+
+        <div class="projects">
+
+            <div class="project">
+                <div class="project-number">01 / API SECURITY</div>
+
+                <h3>Secure REST API Documentation</h3>
+
+                <p>
+                    Structured REST API reference covering authentication,
+                    authorization, user endpoints, request and response
+                    formats, validation, error handling, and security
+                    controls.
+                </p>
+
+                <div class="project-tech">
+                    <span>OpenAPI 3.0.3</span>
+                    <span>REST API</span>
+                    <span>Authentication</span>
+                    <span>Authorization</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/Rebeccapiyowino-prog/secure-rest-api-documentation"
+                   target="_blank">
+                    View repository →
+                </a>
+            </div>
+
+
+            <div class="project">
+                <div class="project-number">02 / PYTHON SECURITY</div>
+
+                <h3>Security Log Analyzer</h3>
+
+                <p>
+                    Python based security project focused on analyzing
+                    authentication logs and identifying suspicious login
+                    activity.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Security Logs</span>
+                    <span>Authentication</span>
+                    <span>Analysis</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/Rebeccapiyowino-prog/security-log-analyzer"
+                   target="_blank">
+                    View repository →
+                </a>
+            </div>
+
+
+            <div class="project">
+                <div class="project-number">03 / FILE SECURITY</div>
+
+                <h3>File Integrity Monitor</h3>
+
+                <p>
+                    Python cybersecurity project designed to detect
+                    unauthorized file changes using SHA-256 integrity
+                    checks.
+                </p>
+
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>SHA-256</span>
+                    <span>File Integrity</span>
+                    <span>Monitoring</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/Rebeccapiyowino-prog/file-integrity-monitor"
+                   target="_blank">
+                    View repository →
+                </a>
+            </div>
+
+
+            <div class="project">
+                <div class="project-number">04 / SECURITY ASSESSMENT</div>
+
+                <h3>Vulnerability Assessment Report</h3>
+
+                <p>
+                    Professional security assessment documentation
+                    covering findings, risk analysis, supporting evidence,
+                    and remediation recommendations for a fictional
+                    web application.
+                </p>
+
+                <div class="project-tech">
+                    <span>Security Assessment</span>
+                    <span>Risk Analysis</span>
+                    <span>Evidence</span>
+                    <span>Remediation</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/Rebeccapiyowino-prog/vulnerability-assessment-report"
+                   target="_blank">
+                    View repository →
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Areas of Focus</h2>
+            <p>Technical areas represented across the portfolio.</p>
+        </div>
+
+        <div class="focus-grid">
+
+            <div class="focus-card">
+                <h3>Security Engineering</h3>
+                <p>
+                    Authentication, authorization, API security,
+                    secure systems, integrity monitoring, and
+                    security controls.
+                </p>
+            </div>
+
+            <div class="focus-card">
+                <h3>Security Analysis</h3>
+                <p>
+                    Log analysis, vulnerability assessment,
+                    risk identification, evidence gathering,
+                    and remediation documentation.
+                </p>
+            </div>
+
+            <div class="focus-card">
+                <h3>Technical Documentation</h3>
+                <p>
+                    REST API references, OpenAPI specifications,
+                    request and response examples, security
+                    requirements, and developer documentation.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Let's Connect</h2>
+        </div>
+
+        <p>
+            Explore the projects and technical documentation through
+            GitHub.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+            <a class="button primary"
+               href="https://github.com/Rebeccapiyowino-prog"
+               target="_blank">
+                GitHub Profile
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © 2026 Rebecca Opiyo · Cybersecurity & Computer Science
+    </div>
+</footer>
+
+</body>
+</html>
